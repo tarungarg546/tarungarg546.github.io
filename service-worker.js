@@ -1,4 +1,5 @@
-var cacheName="tarungarg546-github";
+var version="1.0.0";
+var cacheName="tarungarg546-github "+version;
 self.addEventListener("install",function(){
 	console.log("[ServiceWorker] installed!");
 });
@@ -35,4 +36,21 @@ self.addEventListener("fetch",function(event){
 					    	console.log("[ServiceWorker] Error :- "+err);
 					    })
   					);
+});
+self.addEventListener('activate', function(e){
+  console.log('[ServiceWorker] Activate');
+  e.waitUntil(
+    caches.keys().then(function(keyList){
+      return Promise.all(keyList.map(function(key){      
+        if (key.startsWith("tarungarg546-github")) {
+        	console.log('[ServiceWorker] Removing old cache', key);
+          	return caches.delete(key);
+        }
+      }));
+    })
+    .then(function(){
+    	//this code will cause the new service worker to take over responsibility for the still open pages.
+    	self.clients.claim();
+    })
+  );
 });
