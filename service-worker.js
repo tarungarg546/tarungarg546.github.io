@@ -8,7 +8,7 @@ self.addEventListener("fetch",function(event){
 	event.respondWith(
 					    caches.match(event.request).then(function(response) {
 					    	if(response){
-					    		console.info("Fulfilling "+e.request.url+" from cache.");
+					    		console.info("Fulfilling "+event.request.url+" from cache.");
 					    		return response;
 					    	} else {
 					    		var fetchRequest = event.request.clone();
