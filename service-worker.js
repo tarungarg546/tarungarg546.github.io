@@ -1,5 +1,5 @@
 var cacheName="tarungarg546-github";
-self.addEventListener("install",function(event){
+self.addEventListener("install",function(){
 	console.log("[ServiceWorker] installed!");
 });
 
