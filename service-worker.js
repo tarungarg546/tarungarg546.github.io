@@ -25,7 +25,10 @@ self.addEventListener("fetch",function(event){
 										            });
 
 						            return response;
-						        });
+						        })
+						        .catch(function(err){
+						        	console.log("[ServiceWorker] Error :- "+err);
+						        })
 						    }
 					    })
 					    .catch(function(err){
