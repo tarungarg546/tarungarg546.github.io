@@ -24,6 +24,18 @@
 		<meta property="og:image" content="http://i.imgur.com/gle2AYn.jpg">
 		<meta property="twitter:image:src" content="http://i.imgur.com/gle2AYn.jpg">
 	</head>
+	<script type="text/javascript">
+		if('serviceWorker' in navigator) {
+			navigator.serviceWorker  
+                   .register('service-worker.js')  
+                   .then(function() { 
+                   	]	console.log('[Service Worker] Registered'); 
+                   })
+                   .catch(function(err){
+                   		console.log("Error in registering service-worker "+err);
+                   });
+		}
+	</script>
 	<body class="is-loading">
 		<div id="wrapper">
 			<div id="main">
