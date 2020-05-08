@@ -3,9 +3,9 @@ layout: post
 title: Guide for Working with Tarun
 ---
 
-👋
-
 I’m writing this document to give you a better sense of me and my unique values, quirks, and growth areas so that we can develop the strongest relationship possible. 
+
+👋
 
 I truly believe that ***Stronger teams make Stronger progress 🥊.*** 
 
